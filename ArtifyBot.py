@@ -40,9 +40,9 @@ file_path = os.path.join(desktop, "digitalprompt.txt")
 def retrieve_first_url(channelid):
    # token = get_discord_token()
     headers = {
-       # 'authorization' : '8u3rC912NiAGTxIUNbfcQGZiZHR2rF'
-        'authorization' : 'MTA3OTg5MTcwNTI5MTA3OTY5MA.GqDE8J.qUEIZn7Ip8gfs5ZJHznMVs7tK33QztH1sVv7gc'
-       # NTQxMDIwMjQ2NjEwNTQyNTkz.GM4W4I.JHDgKkeKsP9FNPz3J3L9U_o-mfOwS-jUpioKr0
+       
+        'authorization' : 'ADD KEY'
+       
     }
 
     r=requests.get(f'https://discord.com/api/v9/channels/{channelid}/messages', headers=headers)
@@ -84,7 +84,7 @@ def send_prompt(channelid, prompt):
     }
 
     header = {
-        'authorization' : 'NTQxMDIwMjQ2NjEwNTQyNTkz.GM4W4I.JHDgKkeKsP9FNPz3J3L9U_o-mfOwS-jUpioKr0'
+        'authorization' : 'ADD KEY'
 
     }
 
@@ -149,7 +149,7 @@ def crop_image(image_path, width, height):
     if width==23.4 and height==33.1:
         version='ISO'
 
-    save_path = os.path.splitext(image_path)[0] + f"{version}" + ".jpeg"#os.path.splitext(image_path)[1]
+    save_path = os.path.splitext(image_path)[0] + f"{version}" + ".jpeg"
     cv2.imwrite(save_path, cropped_img, [cv2.IMWRITE_JPEG_QUALITY,100])
     
     return cropped_img
@@ -158,9 +158,9 @@ def upload_folder(folder_path):
     
     creds = Credentials.from_authorized_user_info(
     {
-        "refresh_token": "1//045LGyH7zENKbCgYIARAAGAQSNwF-L9IrIZpX6L4VX_2H6EZ_GU3aUYx0dnhDCt8hRCxV_xo1qxf8ac_WiwPDvQDqBx4pqpkpeiI",
-        "client_id": "308092366642-196qp1hh10160l2c55nedp1hqa2sjc79.apps.googleusercontent.com",
-        "client_secret": "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"
+        "refresh_token": "ADD TOKEN",
+        "client_id": "ADD CLIENT ID",
+        "client_secret": "ADD CLIENT SECRET
     },
     ['https://www.googleapis.com/auth/drive']
 )
@@ -369,7 +369,7 @@ def create_mockup(mockup, product_image):
 def get_tags(title):
     
 
-    api_key = "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"
+    api_key = "ADD API KEY"
     openai.api_key = api_key
     model = "text-davinci-003"
 
@@ -415,7 +415,7 @@ def get_tags(title):
     return keyword_string
 
 def get_title(title, product):
-    api_key = "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"
+    api_key = "ADD API KEY"
     openai.api_key = api_key
     model = "text-davinci-003"
 
@@ -445,7 +445,7 @@ def add_listing(title, description, price, access):
 
     # Set the access token and API key
     access_token = access
-    api_key = 'x7t40z0cqw2su8ogrgkiqi73'
+    api_key = 'ADD API KEY'
     tags_arr = get_tags(title)
     tags_arr = re.sub(r'[^\w\s\,]', ' ', tags_arr)
     print("\n")
@@ -518,7 +518,7 @@ def add_mockup(mockup_path, listng, access):
 
     # Set the access token and API key
     access_token = access
-    api_key = 'x7t40z0cqw2su8ogrgkiqi73'
+    api_key = 'ADD API KEY'
 
     # Set the headers for the request
     headers = {
@@ -557,7 +557,7 @@ def add_extras(listing_id, access_token, image_ids, title):
     # Set the headers for the request
     headers = {
         'Authorization': 'Bearer ' + access_token,
-        'x-api-key': 'x7t40z0cqw2su8ogrgkiqi73'
+        'x-api-key': 'ADD API KEY'
     }
 
     # Add images
@@ -588,7 +588,7 @@ def add_Listing_File(file_path, listng, access):
     url = "https://openapi.etsy.com/v3/application/shops/{shop_id}/listings/{listing_id}/files"
     shop_id = 41700844  # Replace with your own shop ID
     listing_id = listng  # Replace with the ID of the listing to which the file will be associated
-    api_key = "x7t40z0cqw2su8ogrgkiqi73"  # Replace with your own Etsy API key
+    api_key = "ADD API KEY"  # Replace with your own Etsy API key
     token = access
 
     #file_path = "/Users/totonito3/Etsy Digital Print/Vividdigitalstore/surreal_and_abstract_composition_with_organic_and_geometric_shapes.pdf"
@@ -639,8 +639,8 @@ def getToken():
     token_url = 'https://api.etsy.com/v3/public/oauth/token'
 
     # OAuth 2.0 client credentials
-    client_id = 'x7t40z0cqw2su8ogrgkiqi73'
-    client_secret = 'vwogxafizs'
+    client_id = 'ADD CLIENT ID'
+    client_secret = 'ADD CLIENT SECRET'
     redirect_uri = 'https://localhost/'
 
     # OAuth 2.0 authorization scopes
@@ -665,8 +665,8 @@ def getToken():
             print("GRRRRR"+ access_token)
     except (FileNotFoundError, KeyError):
         # If the file doesn't exist or doesn't contain a refresh token, start the OAuth flow from scratch
-        refresh_token = '748671898.Dg8D0QNARusy-MNCDVX4AUPfIZdQu8tUampy3Dz9SUjz8KvNJWOH51BLSE6xK0XTM2FvhjCbrOgjLeSgg9zJVfwWS0'
-        print("dammnnnGRRRRR")
+        refresh_token = 'REFRESH TOKEN'
+        
     if not refresh_token:
         # Start OAuth flow to obtain an access token and refresh token
         # ...
@@ -719,9 +719,9 @@ def load_Discord():
     time.sleep(10)
 # Fill in the username and password
     username = driver.find_element("name", "email")
-    username.send_keys("5716680998")
+    username.send_keys("ADD USERNAME")
     password = driver.find_element("name", "password")
-    password.send_keys("TheGodFather11432!")
+    password.send_keys("ADD PASSWORD")
     password.send_keys(Keys.RETURN)
     driver.implicitly_wait(22)
     time.sleep(10)
@@ -959,7 +959,7 @@ while os.path.isfile(file_path) and os.stat(file_path).st_size != 0:
 
 
 
-    api_key = "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"
+    api_key = "ADD API KEY"
     endpoint = "https://api.openai.com/v1/engines/davinci/jobs"
 
     openai.api_key = api_key
