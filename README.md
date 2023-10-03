@@ -43,6 +43,6 @@ The Etsy Product Automation System is a powerful automation tool that simplifies
 Clone the repository and install the required dependencies to get started:
 
 ```bash
-git clone https://github.com/yourusername/artifybot.git
+git clone https://github.com/totonito3/artifybot.git
 cd etsy-automation-system
 pip install -r requirements.txt
